@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, InstagramIcon, FacebookIcon, MailIcon, LinkedinIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 
@@ -60,6 +60,7 @@ const Footer = () => {
                 "Video Editing",
                 "Content Creation",
                 "Website Design",
+                "Social Media Managemnet",
               ].map((item, index) => (
                 <motion.li 
                   key={item}
@@ -90,7 +91,7 @@ const Footer = () => {
                   href="mailto:hello@purevalue.agency"
                   className="text-background/70 hover:text-primary transition-colors duration-300 font-body"
                 >
-                  hello@purevalue.agency
+                hello@purevalue.agency <ArrowUpRight size={14} /> 
                 </a>
               </li>
               <li>
@@ -100,7 +101,17 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-background/70 hover:text-primary transition-colors duration-300 font-body flex items-center gap-1"
                 >
-                  Instagram <ArrowUpRight size={14} />
+                  <InstagramIcon /> <ArrowUpRight size={14} />
+                </a>
+              </li>
+               <li>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/70 hover:text-primary transition-colors duration-300 font-body flex items-center gap-1"
+                >
+                  <FacebookIcon /> <ArrowUpRight size={14} />
                 </a>
               </li>
               <li>
@@ -110,7 +121,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-background/70 hover:text-primary transition-colors duration-300 font-body flex items-center gap-1"
                 >
-                  LinkedIn <ArrowUpRight size={14} />
+                  <LinkedinIcon /> <ArrowUpRight size={14} />
                 </a>
               </li>
             </ul>

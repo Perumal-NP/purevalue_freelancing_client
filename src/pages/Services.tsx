@@ -1,7 +1,12 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Palette, Video, PenTool, Globe, Check } from "lucide-react";
+import { ArrowRight, Palette, Video, PenTool, Globe, Check, Handshake } from "lucide-react";
+import serviceBranding from "@/assets/service-branding.jpg";
+import serviceVideo from "@/assets/service-video.jpg";
+import serviceContent from "@/assets/service-content.jpg";
+import serviceWebsite from "@/assets/service-website.jpg";
+import serviceSocial from "@/assets/service-social.jpg";
 
 const services = [
   {
@@ -9,6 +14,7 @@ const services = [
     icon: Palette,
     title: "Personal Branding Strategy",
     description: "Define your unique positioning, voice, and visual identity that sets you apart from the noise.",
+    image: serviceBranding,
     features: [
       "Brand positioning & messaging framework",
       "Target audience research & personas",
@@ -16,13 +22,14 @@ const services = [
       "Content strategy roadmap",
       "Competitive analysis",
     ],
-    price: "Starting at $2,500",
+   
   },
   {
     id: "video",
     icon: Video,
     title: "Video Editing",
     description: "Professional editing for Reels, YouTube, and promotional content that captivates and converts.",
+    image: serviceVideo,
     features: [
       "Short-form content (Reels, TikTok, Shorts)",
       "Long-form YouTube editing",
@@ -30,13 +37,14 @@ const services = [
       "Motion graphics & animations",
       "Thumbnail design",
     ],
-    price: "Starting at $500/video",
+ 
   },
   {
     id: "content",
     icon: PenTool,
     title: "Content Creation",
     description: "Scroll-stopping content for Instagram, LinkedIn, and YouTube that builds authority and converts followers.",
+    image: serviceContent,
     features: [
       "Content calendar & planning",
       "Instagram carousels & graphics",
@@ -44,13 +52,14 @@ const services = [
       "YouTube scripts & concepts",
       "Caption writing & hashtag strategy",
     ],
-    price: "Starting at $1,500/month",
+   
   },
   {
     id: "websites",
     icon: Globe,
     title: "Website Design",
     description: "Portfolio and business websites that showcase your value beautifully and convert visitors into clients.",
+    image: serviceWebsite,
     features: [
       "Custom portfolio websites",
       "Business landing pages",
@@ -58,7 +67,22 @@ const services = [
       "SEO optimization",
       "Analytics setup & tracking",
     ],
-    price: "Starting at $3,000",
+  
+  },
+    {
+    id: "social",
+    icon: Handshake,
+    title: "Social Media Management",
+    description: "Strategic social media management to grow your brand, engage your audience, and drive real business results across all platforms.",
+    image: serviceSocial,
+    features: [
+      "High-quality posts & reels",
+      "Platform-specific strategies",
+      "Audience engagement & growth",
+      "Monthly performance reports",
+      "Brand consistency & visual alignment",
+    ],
+  
   },
 ];
 
@@ -118,7 +142,7 @@ const Services = () => {
                 </ul>
                 <div className="flex items-center gap-6">
                   <p className="text-xl font-display font-semibold text-primary">
-                    {service.price}
+                    
                   </p>
                   <Button asChild>
                     <Link to="/contact">
@@ -129,17 +153,15 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Visual */}
+              {/* Visual with Image */}
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-accent/5 rounded-3xl p-8">
-                  <div className="h-full bg-card rounded-2xl shadow-lg flex items-center justify-center border border-border">
-                    <div className="text-center p-8">
-                      <service.icon className="w-16 h-16 text-primary mx-auto mb-4" />
-                      <p className="font-display font-semibold text-lg text-foreground">
-                        {service.title}
-                      </p>
-                    </div>
-                  </div>
+                <div className="relative rounded-3xl overflow-hidden group">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
             </div>

@@ -64,7 +64,7 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Trust Indicators
             <div className="pt-8 opacity-0 animate-fade-up animation-delay-400">
               <p className="text-sm text-muted-foreground font-body mb-4">
                 Trusted by founders and creators worldwide
@@ -85,7 +85,7 @@ const HeroSection = () => {
                   <p className="text-sm text-muted-foreground">Client Retention</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Visual Element with floating animation */}
